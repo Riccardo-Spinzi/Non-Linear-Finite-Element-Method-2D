@@ -1,7 +1,7 @@
 function MODEL = set_pointers( MODEL )
 
-% ogni riga rappresenta un elemento e ogni colonna i dof associati a
-% quell'elemento, uso il vettore pos per aiutarmi.
+% Each rae represents an element and every column represents the dofs 
+% associated with that specific element, vector pos is used as reference
 [m,n] = size(MODEL.pos);                
 [q,r] = size(MODEL.elements);
 MODEL.ptrs = zeros(q,MODEL.eltype*n);
