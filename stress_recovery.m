@@ -49,12 +49,12 @@ for i = 1 : MODEL.nels
             % --- Get B matrix
             [ Bc, ~ ] = get_B_matrix( KINEMATICS, nl_check ); 
 
-            % recupero displacement ai nodi corrispondenti
+            % --- Recover useful displacements
             U = MODEL.UxUy(nodes,:);
             [r,c] = size(U);
             U_calc = reshape(U',r*c,1);
 
-            % ricavo lo stress agli integration points
+            % --- Recover stress at integration points
             stress_voigt = ELEMENT.c * Bc * U_calc; 
             sigma_vect_xx(count) = stress_voigt(1);
             sigma_vect_yy(count) = stress_voigt(2);
