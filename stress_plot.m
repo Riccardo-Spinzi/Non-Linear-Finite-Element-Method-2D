@@ -1,8 +1,5 @@
 function MODEL = stress_plot( MODEL, POST, SOL )
 
-% NOTA: se ho l'integrazione 2x2 EZ, altrimenti modifico il numero di nodi
-% eliminando quelli intermedi
-
 Barlow = MODEL.Barlow_points;
 nl_check = SOL.type;
 
