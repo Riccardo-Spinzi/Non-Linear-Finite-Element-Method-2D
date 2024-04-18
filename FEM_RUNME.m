@@ -7,10 +7,10 @@ addpath('C:\Users\Utente\Desktop\FEM NL\INPUT files');
 
 % ---1. Pre-process
 
-INPUT = inputNL_cantilever_5_els('neohookean','ul');          
+INPUT = ;          
 
 % if the problem is non-linear, specify the Newton-Rhapson method to apply:
-NR_method = 'NR';
+NR_method = ;
 
 % ---2. Solution
 
