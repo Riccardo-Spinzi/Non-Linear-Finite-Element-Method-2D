@@ -1,10 +1,5 @@
 function ELEMENT = get_C_matrix( MODEL, ELEMENT, MATERIAL, KINEMATICS, formul_check )
 
-% c viene lasciata uguale in linear e non linear, ma dovrei fare il suo
-% push forward per ottenerla in spatial form (vedere note, in quel caso
-% servirebbe KINEMATICS) si può pensare di implementare anche slide 32 con
-% i diversi casi
-
 % --- Variable initialization
 E = MATERIAL.E;
 nu = MATERIAL.nu;
@@ -93,7 +88,6 @@ elseif strcmpi(MATERIAL.type,'neohookean') == 1
         mu_prime = mu/(J^2);
         ELEMENT.t = MATERIAL.thickness/J;
         ELEMENT.c = lambda_prime*kron(eye(2),eye(2))+2*mu_prime*eye(4);
-        % presa dalla notazione indiciale e scritta a mano
         ELEMENT.c_voigt = [lambda_prime+2*mu_prime, lambda_prime,           0;
                            lambda_prime,            lambda_prime+2*mu_prime,0;
                            0,                       0,                      mu_prime];
@@ -104,7 +98,6 @@ elseif strcmpi(MATERIAL.type,'neohookean') == 1
         mu_prime = mu/(J^2);
         ELEMENT.t = MATERIAL.thickness/J;
         ELEMENT.c = lambda_prime*kron(eye(2),eye(2))+2*mu_prime*eye(4);
-        % presa dalla notazione indiciale e scritta a mano
         ELEMENT.c_voigt = [lambda_prime+2*mu_prime, lambda_prime,           0;
                            lambda_prime,            lambda_prime+2*mu_prime,0;
                            0,                       0,                      mu_prime];
