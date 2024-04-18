@@ -27,8 +27,8 @@ for i = 1 : m
         U_def_y(5:end) = [];
     end
 
-    plot_x_coord_un = [plot_x_coord; plot_x_coord(1)]; % altrimenti non disegna l'ultima linea dell'elemento, potei cercare qualche function migliore di plot
-    plot_y_coord_un = [plot_y_coord; plot_y_coord(1)]; % idem per y
+    plot_x_coord_un = [plot_x_coord; plot_x_coord(1)];
+    plot_y_coord_un = [plot_y_coord; plot_y_coord(1)];
 
     % undeformed
     subplot(1,2,1)
@@ -37,8 +37,8 @@ for i = 1 : m
     plot_x_coord_def = plot_x_coord + U_def_x;
     plot_y_coord_def = plot_y_coord + U_def_y;
 
-    plot_x_coord_def = [plot_x_coord_def; plot_x_coord_def(1)]; % altrimenti non disegna l'ultima linea dell'elemento, potei cercare qualche function migliore di plot
-    plot_y_coord_def = [plot_y_coord_def; plot_y_coord_def(1)]; % idem per y
+    plot_x_coord_def = [plot_x_coord_def; plot_x_coord_def(1)];
+    plot_y_coord_def = [plot_y_coord_def; plot_y_coord_def(1)];
 
     % deformed
     subplot(1,2,1)
