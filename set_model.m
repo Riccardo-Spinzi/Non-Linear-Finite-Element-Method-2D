@@ -8,9 +8,9 @@ SOL = struct();
 ELEMENT = struct();
 
 % --- MODEL 
-[m,n] = size(INPUT.elements);       % m è il numero di elementi, n il numero di nodi associati ad un elemento
-[q,~] = size(INPUT.load);           % q è il numero di forze, r sarà sempre = 3 per sintassi dell'algoritmo
-[s,l] = size(INPUT.nodes);          % s è il numero di nodi, l è il numero di gdl del nodo
+[m,n] = size(INPUT.elements);      
+[q,~] = size(INPUT.load);           
+[s,l] = size(INPUT.nodes);         
 MODEL.ndof = s*l;
 MODEL.nfree_dofs = MODEL.ndof - length(INPUT.spc);
 MODEL.nels = m;
@@ -37,9 +37,9 @@ MODEL.U = zeros(MODEL.ndof,1);
 if strcmp(INPUT.sol_type,'nonlinear') == 1
     MODEL.fint = zeros(MODEL.ndof,1);
     MODEL.res = zeros(MODEL.ndof,1);
-    MODEL.res_cons = zeros(MODEL.nfree_dofs,1);                % qui potrei mettere gia il conto dei gdl <--- che vuol dire LOL
+    MODEL.res_cons = zeros(MODEL.nfree_dofs,1);               
     MODEL.dU = zeros(MODEL.ndof,1);
-    MODEL.dU_cons = zeros(MODEL.nfree_dofs,1);                 % qui potrei mettere gia il conto dei gdl
+    MODEL.dU_cons = zeros(MODEL.nfree_dofs,1);             
 end
 
 MODEL.NR_method = NR_method;
@@ -107,8 +107,8 @@ switch(n)
                                                         eta^2/2 - 1/2,eta*(xi - 1)];
 
     otherwise
-        disp(['il numero di nodi per ogni elemento non è corretto, inserirne...' ...
-            ' 4 per elementi bilineari, 8 per elementi biquadratici ']);
+        disp(['Incorrect number of nodes, insert...' ...
+            ' 4 for bilinear elements, 8 for biquadratic elements ']);
 end
 ELEMENT.order = n;
 ELEMENT.XY_nodes = zeros(ELEMENT.order,l);          
