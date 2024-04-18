@@ -22,7 +22,6 @@ switch lower(SOL.type)
         U_plot_x = zeros(size(SOL.lambdas)+ [1,0]);
         U_plot_y = zeros(size(SOL.lambdas)+ [1,0]);
         
-        % associo i valori da plottare (max(abs(U))) per Ux e Uy
         for i = 1 : length(SOL.lambdas)
             U_plot_x(i+1) = max(abs(POST.STEP(i).Ux));
             U_plot_y(i+1) = max(abs(POST.STEP(i).Uy));
