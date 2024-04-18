@@ -3,7 +3,7 @@ clear
 close all
 clc
 
-addpath('C:\Users\Utente\Desktop\FEM NL\INPUT files');
+addpath([]);
 
 % ---1. Pre-process
 
