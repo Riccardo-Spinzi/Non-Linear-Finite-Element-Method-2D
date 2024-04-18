@@ -1,8 +1,5 @@
 function POST = POST_stress_recovery( MODEL, SOL, POST, MATERIAL, ELEMENT )
 
-% --- Save stresses
-% POST.STEP(nincr).stress= ELEMENT.sigmas;
-
 Barlow = MODEL.Barlow_points;
 nl_check = SOL.type;
 formul_check = SOL.formul;
@@ -47,7 +44,6 @@ for i = 1 : MODEL.nels
                 % --- Get elasticity tensor  
                 ELEMENT = get_sigma( ELEMENT, MATERIAL, KINEMATICS, formul_check, i, count);
                 
-                % aggiorno count
                 count = count + 1;
             end
 
