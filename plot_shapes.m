@@ -1,11 +1,5 @@
 function plot_shapes( MODEL )
 
-% l'idea per i biquad è killare i nodi interni solo allo scopo del plot,
-% tanto non servono per il disegno in quanto stanno sempre sul segmento che
-% collega i vertici.
-% potrei aggiungere qualche cosa per identificare i nodi con i constraints
-% e quali hanno la forza applicata e in che quantita
-
 % --- Declare useful variables
 elements = MODEL.elements;
 nodes = MODEL.nodes;
