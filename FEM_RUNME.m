@@ -1,10 +1,3 @@
-%% FEATURES IMPLEMENTABILI IN FUTURO
-% - path following techniques
-% - plasticity models
-% - beam elements
-% - prescribed displacements in some nodes as bcs
-% - strains nel linear case
-
 %% F.E. METHOD
 clear
 close all
