@@ -38,8 +38,9 @@ ELEMENT = struct();
 
 % --- MODEL 
 [m,n] = size(INPUT.elements);       % m is the number of elements, n is the number of nodes per element
-[q,~] = size(INPUT.load);           % q is the number of loads applied, r will be always 3 for program syntax
+[q,~] = size(INPUT.load);           % q is the number of loads applied, ~ will be always 3 for program syntax
 [s,l] = size(INPUT.nodes);          % s is the number of nodes, l is the number of dofs of the single node
+[r,~] = size(INPUT.spc);            % r is the number of constraints
 MODEL.ndof = s*l;
 MODEL.nfree_dofs = MODEL.ndof - length(INPUT.spc);
 MODEL.nels = m;
@@ -47,7 +48,7 @@ MODEL.eltype = n;
 MODEL.elements = INPUT.elements;
 MODEL.nodes = INPUT.nodes;
 MODEL.pos = (reshape(1:MODEL.ndof,l,length(MODEL.nodes)))';     
-for i = 1 : length(INPUT.spc)
+for i = 1 : r
     MODEL.constr_dofs(i,1) = MODEL.pos(INPUT.spc(i,1),INPUT.spc(i,2));
 end
 MODEL.free_dofs = (1:MODEL.ndof)';                              
