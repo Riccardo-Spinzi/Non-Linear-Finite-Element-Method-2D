@@ -23,6 +23,9 @@ Implemented features:
 
 ~ Evaluate different kinds of hyperelastic constitutive laws.
 
+Flowchart:
+
+
 Future aims:
 
 ~ Implement the possibility to evaluate distributed forces along the structure;
