@@ -25,6 +25,7 @@ Implemented features:
 
 Flowchart:
 
+![Testo alternativo](README files/flowchartFEM.pdf)
 
 Future aims:
 
