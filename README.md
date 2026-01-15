@@ -25,7 +25,7 @@ Implemented features:
 
 Flowchart:
 
-[flowchartFEM.pdf](https://github.com/user-attachments/files/24630471/flowchartFEM.pdf)
+[flowchartFEM.pdf](README files/flowchartFEM.pdf)
 
 Future aims:
 
