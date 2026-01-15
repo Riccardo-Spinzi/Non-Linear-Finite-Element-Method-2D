@@ -25,7 +25,7 @@ Implemented features:
 
 Flowchart:
 
-[flowchartFEM.pdf](README files/flowchartFEM.pdf)
+![flowchartFEM.pdf](README files/flowchartFEM.svg)
 
 Future aims:
 
